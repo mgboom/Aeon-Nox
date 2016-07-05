@@ -79,6 +79,21 @@
 				<label>$INFO[System.AddonTitle(script.artwork.downloader),,: $LOCALIZE[413]]</label>
 				<visible>System.HasAddon(script.artwork.downloader) + [Container.Content(movies) | Container.Content(tvshows)]</visible>
 			</control>
+			<!-- Added by Bloksel-->
+			<control type="button" id="90230">
+				<description>ExtraFanart downloader button</description>
+    				<width>510</width>
+    				<textwidth>435</textwidth>
+    				<textoffsetx>45</textoffsetx>
+    				<texturefocus border="35,2,35,2">button_shutdown_focus.png</texturefocus>
+    				<texturenofocus border="35,2,35,2">button_shutdown_nofocus.png</texturenofocus>
+    				<onclick>Dialog.Close(1119)</onclick>
+    				<onclick condition="Container.Content(movies)">XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=movie,dbid=$IN​FO[ListItem.DBID],extrafanart)</onclick>
+    				<onclick condition="Container.Content(tvshows)">RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,dbid=$INFO[ListItem.DBID],extrafanart)</onclick>
+    				<label>$LOCALIZE[31020]</label>
+    				<visible>System.HasAddon(script.artwork.downloader)</visible>
+			</control>
+			<!-- End Added by Bloksel-->
 			<control type="button" id="90206">
 				<description>Edit button</description>
 				<width>510</width>

@@ -12,6 +12,26 @@
 				<texture border="1,32,1,1">bottombar.png</texture>
 				<animation effect="slide" end="0,-170" time="120" condition="!Skin.HasSetting(nohighlist)">Conditional</animation>
 			</control>
+			<!-- Bloksels Logo mod-->
+			<control type="image">
+				<posx>1500</posx>
+				<posy>420</posy>
+				<width>390</width>
+				<height>164</height>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+				<visible>!Skin.HasSetting(nohighlist)</visible>
+			</control>
+			<control type="image">
+				<posx>1500</posx>
+				<posy>590</posy>
+				<width>390</width>
+				<height>164</height>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+				<visible>Skin.HasSetting(nohighlist)</visible>
+			</control>
+			<!-- End Bloksel Logo mod-->
 			<control type="group">
 				<left>5</left>
 				<top>442</top>

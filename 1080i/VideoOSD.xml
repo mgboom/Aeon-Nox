@@ -6,7 +6,8 @@
 		<top>0</top>
 	</coordinates>
 	<onload condition="VideoPlayer.Content(livetv)">SetFocus(808)</onload>
-	<onload condition="!VideoPlayer.Content(livetv)">SetFocus(602)</onload>
+	<!-- Bloksel SetFocus 703 to put it on subtitle download-->
+	<onload condition="!VideoPlayer.Content(livetv)">SetFocus(703)</onload>
 	<controls>
 		<control type="slider">
 			<description>Seek Slider</description>
@@ -73,6 +74,7 @@
 					<font>-</font>
 					<onclick>ActivateWindow(osdvideosettings)</onclick>
 				</control>
+				<!-- Bloksel Remove buttons that are on the remote
 				<control type="button" id="600">
 					<texturefocus>osd/buttons/OSDPrevTrackFO.png</texturefocus>
 					<texturenofocus>osd/buttons/OSDPrevTrackNF.png</texturenofocus>
@@ -130,7 +132,7 @@
 					<height>100</height>
 					<font>-</font>
 					<onclick>PlayerControl(Next)</onclick>
-				</control>
+				</control> -->
 				<control type="button" id="703">
 					<texturefocus>osd/buttons/OSDSubtitlesFO.png</texturefocus>
 					<texturenofocus>osd/buttons/OSDSubtitlesNF.png</texturenofocus>

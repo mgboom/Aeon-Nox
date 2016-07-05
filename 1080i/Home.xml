@@ -7,7 +7,8 @@
 	<controls>
 		<include>CommonBackground</include>
 		<include condition="!Skin.HasSetting(Disable.Videoinfo)">NowPlayingVideoWidget</include>
-		<include condition="!Skin.HasSetting(Disable.Musicinfo)">NowPlayingMusicWidget</include>
+		<!-- Line underneath is changed by Bloksel to prevent showing info while playing a tvtune-->
+		<include condition="!Skin.HasSetting(Disable.Musicinfo) + IsEmpty(Window(10025).Property(PlayingBackgroundMedia))">NowPlayingMusicWidget</include>
 		<include>HomeRecentlyAddedInfo</include>
 		<include condition="!Skin.HasSetting(Disable.Altwidget) + System.HasAddon(script.extendedinfo)">HomeRecentlyAddedInfoAlt</include>
 		<include>WeatherWidget</include>

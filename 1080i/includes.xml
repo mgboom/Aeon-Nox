@@ -401,7 +401,8 @@
 				<visible>!String.IsEmpty(Window(home).Property(Window.HasSettings))</visible>
 			</control>
 			<control type="group">
-				<visible>Player.HasMedia + ![Window.IsActive(volumebar)]</visible>
+				<!-- Line underneath is changed by Bloksel to prevent showing info while playing a tvtune-->
+				<visible>Player.HasMedia + ![Window.IsActive(volumebar)] + IsEmpty(Window(10025).Property(PlayingBackgroundMedia))</visible>
 				<animation effect="slide" start="0,-60" end="0,0" time="200">Visible</animation>
 				<animation effect="slide" start="0,0" end="0,-60" time="200">Hidden</animation>
 				<left>1080</left>

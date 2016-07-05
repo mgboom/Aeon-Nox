@@ -132,13 +132,22 @@
 					<control type="image">
 						<left>120</left>
 						<include>MediaFlagVars</include>
-						<texture fallback="flags/studios/default-studio.png">$VAR[StudioFlagPathVar]$INFO[ListItem.Studio,,.png]</texture>
+						<!-- Bloksel
+						<texture fallback="flags/studios/default-studio.png">$VAR[StudioFlagPathVar]$INFO[ListItem.Studio,,.png]</texture> -->
+						<texture>$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
+						<visible>!IsEmpty(ListItem.VideoResolution)</visible>
+						<!-- End Bloksel -->
 					</control>
 					<control type="image">
 						<left>1675</left>
 						<colordiffuse>white</colordiffuse>
 						<include>MediaFlagVars</include>
-						<texture fallback="flags/mpaa/NR.png">$VAR[RatingFlagVar]</texture>
+						<!-- Bloksel
+						<texture fallback="flags/mpaa/NR.png">$VAR[RatingFlagVar]</texture> -->
+						<texture>$INFO[ListItem.AudioChannels,flags/channels/,.png]</texture>
+						<visible>!IsEmpty(ListItem.AudioChannels)</visible>
+						<!-- End Bloksel -->
+						
 					</control>
 				</control>
 				<control type="group">
@@ -201,7 +210,9 @@
 						<left>32</left>
 						<width>198</width>
 						<include>MediaFlagVars</include>
-						<texture fallback="flags/studios/default-studio.png">$VAR[StudioFlagPathVar]$INFO[ListItem.Studio,,.png]</texture>
+						<!-- Bloksel changed audiocodecs to audiochannels
+						<visible>!String.IsEmpty(ListItem.AudioCodec)</visible> -->
+						<texture>$INFO[ListItem.AudioChannels,flags/channels/,.png]</texture>
 					</control>
 					<control type="image">
 						<left>230</left>
@@ -225,8 +236,9 @@
 					<control type="image">
 						<left>230</left>
 						<include>MediaFlagVars</include>
-						<texture>$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
-						<visible>!String.IsEmpty(ListItem.AudioCodec)</visible>
+						<!-- Bloksel changed audiocodecs to audiochannels
+						<visible>!String.IsEmpty(ListItem.AudioCodec)</visible> -->
+						<texture>$INFO[ListItem.AudioChannels,flags/channels/,.png]</texture>
 					</control>
 					<control type="image">
 						<left>428</left>
@@ -251,8 +263,9 @@
 					<control type="image">
 						<left>175</left>
 						<include>MediaFlagVars</include>
-						<texture>$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
-						<visible>!String.IsEmpty(ListItem.AudioCodec)</visible>
+						<!-- Bloksel changed audiocodecs to audiochannels
+						<visible>!String.IsEmpty(ListItem.AudioCodec)</visible> -->
+						<texture>$INFO[ListItem.AudioChannels,flags/channels/,.png]</texture>
 					</control>
 					<control type="image">
 						<left>350</left>
