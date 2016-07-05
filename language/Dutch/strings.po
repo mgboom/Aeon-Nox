@@ -862,7 +862,7 @@ msgstr "CONCERTEN"
 
 msgctxt "#31961"
 msgid "Hide ratings in list views"
-msgstr "Verber waarderingen in lijstweergaven"
+msgstr "Verberg waarderingen in lijstweergaven"
 
 msgctxt "#31962"
 msgid "This toggles the visibility of ratings in views of type List, LowList and TriPanel, except if sorted by rating."
