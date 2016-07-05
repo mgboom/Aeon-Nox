@@ -113,6 +113,7 @@
 				<texture border="1">separator2.png</texture>
 				<visible>!Container(9000).HasNext</visible>
 			</control>
+			<!-- Bloksel hide logo mod
 			<control type="image">
 				<description>LOGO</description>
 				<left>82</left>
@@ -121,7 +122,7 @@
 				<height>120</height>
 				<aspectratio>keep</aspectratio>
 				<texture>aeon-nox-logo.png</texture>
-			</control>
+			</control> -->
 			<include>SystemRightPanel</include>
 			<control type="image">
 				<left>522</left>

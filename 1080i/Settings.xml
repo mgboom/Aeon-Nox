@@ -18,7 +18,9 @@
 				<left>82</left>
 				<top>32</top>
 				<width>356</width>
-				<height>720</height>
+							<!-- Bloksel hide logo mod
+				<height>720</height> -->
+				<height>840</height>
 				<onleft>61</onleft>
 				<onright>61</onright>
 				<onup>9000</onup>
@@ -137,6 +139,7 @@
 				<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 			</control>
+			<!-- Bloksel hide logo mod
 			<control type="image">
 				<description>LOGO</description>
 				<left>82</left>
@@ -146,6 +149,7 @@
 				<aspectratio>keep</aspectratio>
 				<texture>aeon-nox-logo.png</texture>
 			</control>
+			-->
 			<include>SystemRightPanel</include>
 			<control type="image">
 				<left>522</left>

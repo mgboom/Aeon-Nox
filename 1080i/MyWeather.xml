@@ -17,7 +17,7 @@
 				<left>82</left>
 				<top>32</top>
 				<width>356</width>
-				<height>720</height>
+				<height>840</height>
 				<onleft>61</onleft>
 				<onright condition="Container(9000).HasFocus(1)">300</onright>
 				<onright condition="Container(9000).HasFocus(5)">304</onright>
@@ -148,6 +148,7 @@
 				<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 			</control>
+			<!-- Bloksel hide logo mod
 			<control type="image">
 				<description>LOGO</description>
 				<left>82</left>
@@ -157,6 +158,7 @@
 				<aspectratio>keep</aspectratio>
 				<texture>aeon-nox-logo.png</texture>
 			</control>
+			-->
 			<include>SystemRightPanel</include>
 			<control type="group" id="9001">
 				<control type="group">
