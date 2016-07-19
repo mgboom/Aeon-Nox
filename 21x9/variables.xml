@@ -364,10 +364,10 @@
 		<value>$INFO[ListItem.Label2]</value>
 	</variable>
 	<variable name="SeekLabelVar">
-		<value condition="Player.Playing + !Player.Seeking + !Player.DisplayAfterSeek | [Player.Paused + !Player.Caching] | [Player.ShowTime + !Player.Seeking]">$INFO[System.Time]$INFO[player.FinishTime, [,]]</value>
-		<value condition="[Player.Paused + Player.Caching] + !Player.Seeking + !Player.DisplayAfterSeek">$INFO[Player.CacheLevel,$LOCALIZE[15107] ,%]</value>
-		<value condition="Player.Seeking">$INFO[Player.SeekStepSize]</value>
-		<value condition="Player.DisplayAfterSeek + ![player.forwarding | player.rewinding]">$INFO[Player.SeekOffset,$LOCALIZE[31046][COLOR=themecolor] ,[/COLOR]]</value>
+		<value condition="[Player.Playing | [Player.Paused + !Player.Caching] | Player.ShowTime]+ !Player.Seeking">$INFO[System.Time]$INFO[player.FinishTime, [,]]</value>
+		<value condition="!String.IsEmpty(Player.SeekStepSize)">$INFO[Player.SeekStepSize,$LOCALIZE[31046][COLOR=themecolor] ,[/COLOR]]</value>
+		<value condition="!String.IsEmpty(Player.SeekOffset)">$INFO[Player.SeekOffset,$LOCALIZE[31046][COLOR=themecolor] ,[/COLOR]]</value>
+		<value condition="Player.Caching + !Player.Seeking">$INFO[Player.CacheLevel,$LOCALIZE[15107] ,%]</value>
 	</variable>
 	<variable name="OSDRightLabelVar">
 		<value condition="Player.ShowTime + !VideoPlayer.Content(livetv)">$INFO[Player.Time]$INFO[Player.TimeRemaining, / ]</value>
@@ -741,5 +741,13 @@
 		<value condition="Control.HasFocus(21)">$INFO[Container(21).ListItem.Property(Description)]</value>
 		<value condition="Control.HasFocus(9000)">$INFO[Container(9000).ListItem.Label2]</value>
 		<value>$LOCALIZE[15020]</value>
-	</variable>			
+	</variable>
+	<variable name="503.InfoPanelLabel2Var">
+		<value condition="Container.Content(movies)">$INFO[ListItem.Director,$LOCALIZE[31000] ]</value>
+		<value condition="Container.Content(tvshows)">$INFO[ListItem.Studio]</value>
+	</variable>
+	<variable name="58.Label2Var">
+		<value condition="Skin.HasSetting(Banner.Wall)">$LOCALIZE[31166]</value>
+		<value>$LOCALIZE[535]</value>
+	</variable> 		
 </includes>
