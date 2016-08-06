@@ -117,7 +117,7 @@
 					</control>
 				</focusedlayout>
 			</control>
-			<control type="image">
+			<!--// <control type="image">
 				<description>LOGO</description>
 				<left>1482</left>
 				<top>940</top>
@@ -151,7 +151,7 @@
 				<height>120</height>
 				<aspectratio align="left">keep</aspectratio>
 				<texture>xbmc-logo.png</texture>
-			</control>
+			</control> //-->
 		</control>
 	</controls>
 </window>
