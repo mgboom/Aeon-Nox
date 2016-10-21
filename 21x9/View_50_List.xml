@@ -924,8 +924,7 @@
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>0</top>
-							<width>960</width>
+							<width>935</width>
 							<height>120</height>
 							<font>font30</font>
 							<textcolor>grey2</textcolor>
@@ -935,8 +934,8 @@
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
-							<left>100</left>
-							<width>960</width>
+							<left>135</left>
+							<width>935</width>
 							<height>120</height>
 							<font>font15</font>
 							<align>right</align>
@@ -999,8 +998,7 @@
 						</control>
 						<control type="label">
 							<left>135</left>
-							<top>0</top>
-							<width>960</width>
+							<width>935</width>
 							<height>120</height>
 							<font>font30</font>
 							<textcolor>white</textcolor>
@@ -1010,8 +1008,8 @@
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
-							<left>100</left>
-							<width>960</width>
+							<left>135</left>
+							<width>935</width>
 							<height>120</height>
 							<font>font15</font>
 							<align>right</align>
@@ -1256,9 +1254,9 @@
 							<visible>!Container.Content(songs) + !String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="label">
-							<left>15</left>
+							<left>5</left>
 							<top>8</top>
-							<width>105</width>
+							<width>115</width>
 							<height>105</height>
 							<font>font45caps_title</font>
 							<textcolor>grey2</textcolor>
@@ -1311,8 +1309,8 @@
 							<height>70</height>
 							<aspectratio>keep</aspectratio>
 							<colordiffuse>grey3</colordiffuse>
-							<texture>flags/rating/0.png</texture>
-							<visible>!ListItem.IsParentFolder + ![ListItem.IsPlaying | ListItem.IsSelected] + String.IsEmpty(ListItem.UserRating)</visible>
+							<texture fallback="flags/rating/0.png">$INFO[ListItem.Rating,flags/rating/,.png]</texture>
+							<visible>!ListItem.IsParentFolder + String.IsEmpty(ListItem.UserRating)</visible>
 						</control>
 						<control type="image">
 							<left>950</left>
@@ -1322,17 +1320,7 @@
 							<aspectratio>keep</aspectratio>
 							<colordiffuse>themecolor</colordiffuse>
 							<texture>$INFO[ListItem.UserRating,flags/rating/,.png]</texture>
-							<visible>!ListItem.IsParentFolder + ![ListItem.IsPlaying | ListItem.IsSelected] + !String.IsEmpty(ListItem.UserRating)</visible>
-						</control>
-						<control type="image">
-							<left>950</left>
-							<top>50</top>
-							<width>180</width>
-							<height>70</height>
-							<aspectratio>keep</aspectratio>
-							<colordiffuse>selected</colordiffuse>
-							<texture fallback="flags/rating/0.png">$INFO[ListItem.UserRating,flags/rating/,.png]</texture>
-							<visible>!ListItem.IsParentFolder + [ListItem.IsPlaying | ListItem.IsSelected]</visible>
+							<visible>!ListItem.IsParentFolder + !String.IsEmpty(ListItem.UserRating)</visible>
 						</control>
 					</itemlayout>
 					<focusedlayout height="120" width="1140" condition="Container.Content(albums) | Container.Content(songs)">
@@ -1370,9 +1358,9 @@
 							<visible>!Container.Content(songs) + !String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="label">
-							<left>15</left>
+							<left>5</left>
 							<top>8</top>
-							<width>105</width>
+							<width>115</width>
 							<height>105</height>
 							<font>font45caps_title</font>
 							<textcolor>white</textcolor>
@@ -1426,7 +1414,17 @@
 							<aspectratio>keep</aspectratio>
 							<colordiffuse>$VAR[StarRatingDiffuseVar]</colordiffuse>
 							<texture fallback="rating0.png">$INFO[ListItem.UserRating,flags/rating/,.png]</texture>
-							<visible>!ListItem.IsParentFolder</visible>
+							<visible>!ListItem.IsParentFolder + !String.IsEmpty(ListItem.UserRating)</visible>
+						</control>
+						<control type="image">
+							<left>950</left>
+							<top>50</top>
+							<width>180</width>
+							<height>70</height>
+							<aspectratio>keep</aspectratio>
+							<colordiffuse>$VAR[StarRatingDiffuseVar]</colordiffuse>
+							<texture fallback="rating0.png">$INFO[ListItem.Rating,flags/rating/,.png]</texture>
+							<visible>!ListItem.IsParentFolder + String.IsEmpty(ListItem.UserRating)</visible>
 						</control>
 					</focusedlayout>
 					<itemlayout height="120" width="1140" condition="Container.Content(addons)">

@@ -12,22 +12,23 @@
 			<include condition="Window.IsActive(script-NextAired-TVGuide.xml) | Window.IsActive(script-NextAired-TVGuide2.xml)">TVShowNextAiredBackground</include>
 			<include condition="Window.IsActive(weather)">WeatherBackground</include>
 			<include condition="Window.IsActive(script-globalsearch-main.xml)">GlobalSearchBG</include>
+			<include condition="Window.IsActive(service-LibreELEC-Settings-mainWindow.xml)">LibreELECBG</include>
 			<control type="visualisation">
 				<include>FullscreenDimensions</include>
 				<visible>Player.HasAudio</visible>
 				<visible>!Skin.HasSetting(Disable.ShowBackgroundVis)</visible>
-				<visible>!Window.IsVisible(TVChannels) + !Window.IsVisible(RadioChannels)</visible>
+				<visible>!Window.IsVisible(TVChannels) + !Window.IsVisible(RadioChannels) + !SlideShow.IsActive</visible>
 				<visible>String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
 			</control>
 			<control type="image">
 				<include>FullscreenDimensions</include>
 				<texture>black.png</texture>
-				<visible>[Player.HasVideo + !Skin.HasSetting(Disable.ShowBackgroundVideo) + !Window.IsVisible(TVChannels) + !Window.IsVisible(RadioChannels)] | Control.IsVisible(502)</visible>
+				<visible>[Player.HasVideo + !Skin.HasSetting(Disable.ShowBackgroundVideo) + !Window.IsVisible(TVChannels) + !Window.IsVisible(RadioChannels) + !SlideShow.IsActive] | Control.IsVisible(502)</visible>
 				<animation effect="fade" start="100" end="70" time="300" condition="Control.IsVisible(502)">conditional</animation>
 			</control>
 			<control type="videowindow">
 				<include>FullscreenDimensions</include>
-				<visible>Player.HasVideo + !Skin.HasSetting(Disable.ShowBackgroundVideo) + !Window.IsVisible(TVChannels) + !Window.IsVisible(RadioChannels)</visible>
+				<visible>Player.HasVideo + !Skin.HasSetting(Disable.ShowBackgroundVideo) + !Window.IsVisible(TVChannels) + !Window.IsVisible(RadioChannels) + !SlideShow.IsActive</visible>
 			</control>
 		</control>
 		<control type="group">
@@ -134,8 +135,8 @@
 			<aspectratio align="center">scale</aspectratio>
 			<include>FullscreenDimensions</include>
 			<fadetime>600</fadetime>
-			<texture fallback="special://skin/backgrounds/default_bg.jpg" background="true">$VAR[HomeBackgroundVar]</texture>
-			<visible>ControlGroup(9003).HasFocus() | ControlGroup(9004).HasFocus()</visible>
+			<texture fallback="special://skin/backgrounds/default_bg.jpg" background="true">$VAR[WidgetFanartVar]</texture>
+			<visible>[ControlGroup(9003).HasFocus() | ControlGroup(9004).HasFocus()] | [[ControlGroup(9003).HasFocus() | ControlGroup(9004).HasFocus()] + System.HasModalDialog]</visible>
 			<include>VisibleFadeAnimation</include>
 		</control>
 	</include>
@@ -371,6 +372,16 @@
 			<aspectratio>scale</aspectratio>
 			<fadetime>600</fadetime>
 			<visible>Control.HasFocus(211)</visible>
+			<animation effect="fade" time="600">Visible</animation>
+			<animation effect="fade" time="600">Hidden</animation>
+			<animation effect="fade" time="200">WindowClose</animation>
+		</control>
+	</include>
+	<include name="LibreELECBG">
+		<control type="image">
+			<texture background="true">special://skin/backgrounds/le_bg.jpg</texture>
+			<aspectratio>scale</aspectratio>
+			<fadetime>600</fadetime>
 			<animation effect="fade" time="600">Visible</animation>
 			<animation effect="fade" time="600">Hidden</animation>
 			<animation effect="fade" time="200">WindowClose</animation>
